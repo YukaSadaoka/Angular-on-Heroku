@@ -1,0 +1,16 @@
+.pending{
+    color: gray;
+}
+
+.correct{
+    color: blue;
+}
+
+.wrong{
+    color: red;
+    font-weight: bold;
+}
+
+box{
+    height: 500px;
+}

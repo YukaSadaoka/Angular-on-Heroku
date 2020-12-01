@@ -1,0 +1,15 @@
+.container{
+    margin: 1em;
+}
+
+div{
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.disabled{
+    background-color: gray;
+
+}

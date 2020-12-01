@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="columns is-centered">
+        <div class="box column is-centered is-mobile">
+            <h1 class="title has-text-centered"> Typing Challenge</h1>
+            <p class="has-text-centered">
+                <span [class]="compareLetter(letter, enteredText[i])" *ngFor="let letter of text.split(''); let i = index;">{{letter}}</span>
+            </p>
+            <div class="field">
+                <input class="input" (input)="checkInput($event.target.value)">
+            </div>
+            <div class="column is-full is-centered">
+                <h1 *ngIf="text == enteredText" class="title">Success!</h1>
+            </div>
+        </div>
+    </div>
+</div>
+

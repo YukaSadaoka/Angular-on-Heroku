@@ -2,10 +2,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { CardComponent } from './card/card.component';
+import { TypingComponent } from './typing/typing.component';
+import { FormComponent } from './form/form.component';
+import { ConvertMilePipe } from './convert-mile.pipe';
+import { ClassDirectiveDirective } from './class-directive.directive';
+import { TimesDirective } from './times.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CardComponent,
+    TypingComponent,
+    FormComponent,
+    ConvertMilePipe,
+    ClassDirectiveDirective,
+    TimesDirective,
   ],
   imports: [
     BrowserModule
