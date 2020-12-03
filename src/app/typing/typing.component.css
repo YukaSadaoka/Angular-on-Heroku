@@ -14,3 +14,7 @@
 box{
     height: 500px;
 }
+
+.container{
+    margin: 2em;
+}

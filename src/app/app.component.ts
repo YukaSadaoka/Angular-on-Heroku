@@ -52,7 +52,6 @@ export class AppComponent {
   }
   onAmountChange(amount: string){
     this.amountChanged = parseFloat(amount);
-
   }
 
   posts = [

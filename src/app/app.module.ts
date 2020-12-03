@@ -8,6 +8,7 @@ import { FormComponent } from './form/form.component';
 import { ConvertMilePipe } from './convert-mile.pipe';
 import { ClassDirectiveDirective } from './class-directive.directive';
 import { TimesDirective } from './times.directive';
+import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { TimesDirective } from './times.directive';
     ConvertMilePipe,
     ClassDirectiveDirective,
     TimesDirective,
+    TimerComponent,
   ],
   imports: [
     BrowserModule

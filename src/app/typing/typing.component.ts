@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Environment } from '@angular/compiler-cli/src/ngtsc/typecheck/src/environment';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-typing',
@@ -17,9 +18,7 @@ export class TypingComponent implements OnInit {
     if(!enteredLetter){
       return 'pending';
     }
-
     return enteredLetter === letter ? 'correct': 'wrong';   
-    
   }
 
   constructor() { }

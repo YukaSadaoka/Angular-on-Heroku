@@ -1,6 +1,4 @@
-.container{
-    margin: 1em;
-}
+
 
 div{
     display: flex;
@@ -8,8 +6,15 @@ div{
     justify-content: center;
     flex-wrap: wrap;
 }
+.box {
+    margin: 1.5em;
+}
 
 .disabled{
     background-color: gray;
 
+}
+
+.columns{
+    margin: 1.5em;
 }

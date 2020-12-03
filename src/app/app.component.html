@@ -1,39 +1,56 @@
-<nav class="container is-centered">
-  <ul class="pagination-list">
-    <a class="pagination-previous" (click)="currentPage =  currentPage - 1" [appClass]="{ disabled : currentPage === 0 }" >Previous</a>
-    <ng-container  *appTimes="images.length; let i = index;" >
-      <li *ngIf="checkWindowIndex(i)">
-        <a (click)="currentPage = i" class="pagination-link"  [appClass]="{ 'is-current' : i === currentPage }">{{ i + 1 }}</a>
-      </li>
-    </ng-container >
-    <a class="pagination-next" [appClass]="{ disabled: currentPage === images.length - 1}" (click)="currentPage = currentPage + 1" >Next page</a>
-  </ul>
-</nav>
-
-
-<div class='box container is-centered'>
+<div class="Container columns">
   <div class="box columns is-centered">
-  <div class="column is-full"> <h4>{{ images[currentPage].title}}</h4></div>
-  <div class="column is-full"> <img [src]="images[currentPage].url"/></div>
-</div>
-</div>
-<div class="box is-centered">
-  <app-typing
-   [text]="randomText"
-  ></app-typing>
-</div>
-
-{{ currentPage | json}}
-<div [ngSwitch]="currentPage">
-  <div *ngSwitchCase="0">
-    Current Page is zero
+    <div class="column is-full">
+      <app-typing
+      [text]="randomText"
+      ></app-typing>
+    </div>
+    <div class="column is-full"> 
+      <app-timer>
+        <div class="is-centered">
+          <h2 class="title">Hurry! You have 15 seconds!</h2>
+        </div>
+      </app-timer>
+    </div>
   </div>
+<div class="container columns is-centered">
+  <div class="column is-full">
+    <h3 class="title">Gallery</h3>
+  </div>
+  <nav class="container column is-full is-centered">
+    <ul class="pagination-list">
+      <a class="pagination-previous" (click)="currentPage =  currentPage - 1" [appClass]="{ disabled : currentPage === 0 }" >Previous</a>
+      <ng-container  *appTimes="images.length; let i = index;" >
+        <li *ngIf="checkWindowIndex(i)">
+          <a (click)="currentPage = i" class="pagination-link"  [appClass]="{ 'is-current' : i === currentPage }">{{ i + 1 }}</a>
+        </li>
+      </ng-container >
+      <a class="pagination-next" [appClass]="{ disabled: currentPage === images.length - 1}" (click)="currentPage = currentPage + 1" >Next page</a>
+    </ul>
+  </nav>
+
+  <div class="box columns is-centered">
+    <div class="column is-full"> <h4>{{ images[currentPage].title}}</h4></div>
+    <div class="column is-full"> <img [src]="images[currentPage].url"/></div>
+  </div>
+
+  <div class="container">
+    <div class="is-centered">
+      <app-card
+      *ngFor="let post of posts"
+      [title]="post.title"
+      [imageUrl]="post.imageUrl"
+      [username]="post.username"
+      [content]="post.content"
+    ></app-card>
+    </div>
+  </div> 
 </div>
 
 <div class="container is-centered">
   <div class="box columns is-multiline is-centered is-mobile">
     <div class="column is-full">
-      <h3 class="title"> Payment Form </h3>
+      <h3 class="title"> Registration Form </h3>
     </div>
     <div class="column is-half">
         <label>Payee Name</label>
@@ -41,7 +58,7 @@
     </div>
     <div class="column">
     <div class="columns is-mobile">
-      <div class="column is-full" > Receiver Name </div>
+      <div class="column is-full" > Name </div>
       <div class="column is-full" >
         <span> {{ payeeName | titlecase }} </span>
       </div>
@@ -53,7 +70,7 @@
     </div>
     <div class="column is-half">
       <div class="columns is-mobile">
-        <div class="column is-full" > Receiver Date </div>
+        <div class="column is-full" > Date </div>
         <div class="column is-full" >
           <span> {{ paymentDate | date: 'MM-dd-yyyy'}} </span>
         </div>
@@ -65,35 +82,24 @@
       </div>
       <div class="column is-half">
         <div class="columns is-mobile">
-        <div class="column is-full" > Receiver Amount </div>
+        <div class="column is-full" > Amount </div>
         <div class="column is-full" >
           <span> {{ amountChanged | currency: 'JPY' }} </span>
         </div>
-         </div>
+        </div>
     </div>
       <div class="column is-half">
-        <label>Miles</label>
+        <label>Length</label>
         <input class="input" (input)="onMilesChange($event.target.value)" />
       </div>
       <div class="column is-half">
         <div class="columns is-mobile">
-        <div class="column is-full" > Miles </div>
+        <div class="column is-full" > Length </div>
         <div class="column is-full" >
           <span *ngIf="(miles | convertMile: 'cm')> 10"> {{ miles | convertMile: 'cm' | number: '1.0-3' }} </span>
         </div>
-         </div>
+        </div>
     </div>
     </div>
 </div>
-
-<div class="container">
-  <div class="is-centered">
-    <app-card
-    *ngFor="let post of posts"
-    [title]="post.title"
-    [imageUrl]="post.imageUrl"
-    [username]="post.username"
-    [content]="post.content"
-  ></app-card>
-  </div>
-</div> 
+</div>
